@@ -1495,6 +1495,7 @@ h5 {
   max-width: 100%;
   max-height: 100%;
   margin-bottom: 32px;
+  border-radius: 0 19px 19px 0;
 }
 @media (min-width: 1000px) {
   .menu__img {
@@ -1759,7 +1760,7 @@ img.mfp-img {
 }
 @media (min-width: 1000px) {
   .events {
-    padding: 230px 0 66px;
+    padding: 48px 0 66px 0;
     margin-top: 0;
   }
 }
@@ -1804,6 +1805,7 @@ img.mfp-img {
   position: relative;
   max-width: max-content;
   color: #808080;
+  transition: color 0.3s linear;
 }
 .events__link::after {
   content: "";
@@ -1999,6 +2001,15 @@ a .events__titleDesc:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s linear;
+}
+.events__button:hover {
+  background: #E0B68B;
+  color: #fff;
+}
+.events__button:active {
+  background: #AC8B6A;
+  color: #fff;
 }
 .events__button-link {
   margin-top: 8px;
@@ -2015,13 +2026,14 @@ a .events__titleDesc:hover {
   height: 48px;
   border: 1px solid rgba(199, 161, 122, 0.55);
   border-radius: 8px;
+  transition: all 0.3s linear;
 }
 .events__button-link:hover {
   color: #fff;
   background-color: #C7A17A;
 }
 .events__button-link:active {
-  background-color: #cccccc;
+  background-color: #AC8B6A;
   color: #fff;
 }
 @media (min-width: 1000px) {
@@ -2037,6 +2049,12 @@ a .events__titleDesc:hover {
     display: block;
     max-width: 130px;
     margin: 0;
+  }
+}
+
+@media (min-width: 1000px) {
+  .page-events {
+    padding-top: 233px;
   }
 }
 
@@ -2185,12 +2203,26 @@ a .events__titleDesc:hover {
   padding-left: 95px;
   background: #C7A17A;
   border-radius: 8px;
+  transition: all 0.3s linear;
 }
 @media (min-width: 1000px) {
   .bonus__button {
     max-width: 228px;
     padding-left: 48px;
   }
+}
+.bonus__button:hover {
+  background: #E0B68B;
+  color: #fff;
+}
+.bonus__button:active {
+  background: #AC8B6A;
+  color: #fff;
+}
+.bonus__button--disable {
+  background: #C7A17A;
+  opacity: 0.5;
+  color: #fff;
 }
 .bonus__button--app, .bonus__button--google {
   position: relative;
@@ -3338,14 +3370,20 @@ a .events__titleDesc:hover {
   }
 }
 .header__basket {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: all 0.2s linear;
+  cursor: pointer;
 }
 @media (min-width: 1000px) {
   .header__basket {
     gap: 12px;
   }
+}
+.header__basket:hover {
+  border-color: #C7A17A;
 }
 .header__basket:hover .header__basket-img {
   color: #E0B68B;
@@ -3354,10 +3392,10 @@ a .events__titleDesc:hover {
   color: #C7A17A;
 }
 .header__basket-link {
-  transition: all 0.3s linear;
+  transition: all 0.2s linear;
 }
 .header__basket-img {
-  transition: all 0.3s linear;
+  transition: all 0.2s linear;
   color: #C7A17A;
 }
 .header__basket-name {
@@ -3505,6 +3543,14 @@ a .events__titleDesc:hover {
   font-size: 13px;
   border-bottom: 1px solid;
   border-color: transparent;
+  font-family: "Jost";
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 1px;
+  font-feature-settings: "tnum" on, "lnum" on;
+  transition: all 0.2s linear;
+  cursor: pointer;
+  color: #fff;
 }
 @media (min-width: 1280px) {
   .contacts__item {
@@ -3517,20 +3563,16 @@ a .events__titleDesc:hover {
   }
 }
 .contacts__item:hover {
-  color: #C7A17A;
   border-color: #C7A17A;
 }
-.contacts__tel {
-  transition: all 0.3s linear;
-}
-.contacts__tel:hover {
+.contacts__item:hover .contacts__tel, .contacts__item:hover .contacts__reserve {
   color: #C7A17A;
+}
+.contacts__tel {
+  transition: all 0.2s linear;
 }
 .contacts__reserve {
-  transition: all 0.3s linear;
-}
-.contacts__reserve:hover {
-  color: #C7A17A;
+  transition: all 0.2s linear;
 }
 
 .page-event .nav__link,
@@ -3552,17 +3594,27 @@ a .events__titleDesc:hover {
 .page-banquets .nav__link,
 .page-banquets .contacts__item,
 .page-banquets .header__basket-link,
-.page-banquets .header__order {
+.page-banquets .header__order, .page-events .nav__link,
+.page-events .contacts__item,
+.page-events .header__basket-link,
+.page-events .header__order {
   color: #010103;
 }
 .page-banquets .nav__link:hover,
 .page-banquets .contacts__item:hover,
 .page-banquets .header__basket-link:hover,
-.page-banquets .header__order:hover {
+.page-banquets .header__order:hover, .page-events .nav__link:hover,
+.page-events .contacts__item:hover,
+.page-events .header__basket-link:hover,
+.page-events .header__order:hover {
   color: #C7A17A;
 }
-.page-banquets .header__counter {
+.page-banquets .header__counter, .page-events .header__counter {
   color: #C7A17A;
+}
+
+.page-events .header__basket {
+  display: none;
 }
 
 .icon-menu {
@@ -3573,6 +3625,9 @@ a .events__titleDesc:hover {
   cursor: pointer;
   position: relative;
   z-index: 15;
+}
+.icon-menu:hover .icon-menu__inner span, .icon-menu:hover .icon-menu__inner::before, .icon-menu:hover .icon-menu__inner::after {
+  background-color: #E0B68B;
 }
 .icon-menu__inner {
   position: relative;
@@ -3761,17 +3816,21 @@ a .events__titleDesc:hover {
   max-width: 106px;
   width: 100%;
   padding: 14px 20px;
-  border: 2px solid var(--color-accent);
   border-radius: 8px;
   transition: all 0.2s ease-in;
 }
 .menu-item__button:hover {
-  color: var(--color-text-dark);
-  background-color: var(--color-text-light);
+  color: var(--color-text-light);
+  background-color: #E0B68B;
 }
 .menu-item__button:active {
-  background-color: #cccccc;
-  color: var(--color-text-dark);
+  color: var(--color-text-light);
+  background-color: #AC8B6A;
+}
+.menu-item__button--disable {
+  color: var(--color-text-light);
+  background: #C7A17A;
+  opacity: 0.5;
 }
 
 .events-control__inner {
@@ -4001,15 +4060,28 @@ a .events__titleDesc:hover {
   width: 48px;
   height: 48px;
   max-width: 150px;
+  border-radius: 50%;
+  border: 1px solid #262424;
+  transition: all 0.3s linear;
+  color: #C7A17A;
 }
-.footer__social img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.footer__social a svg {
+  transition: all 0.3s linear;
+}
+.footer__social a:hover {
+  background: #C7A17A;
+  color: #fff;
+}
+.footer__social a:active {
+  background: #AC8B6A;
 }
 .footer__social li:last-child a {
-  width: 167px;
+  width: 161px;
   height: 48px;
+  border-radius: 24px;
+}
+.footer__social li:last-child a svg {
+  margin-right: 12px;
 }
 @media (min-width: 1000px) {
   .footer__social li:last-child {
