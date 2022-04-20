@@ -2411,6 +2411,11 @@ a .events__titleDesc:hover {
   justify-content: center;
   transition: background 0.3s linear;
 }
+@media (max-width: 600px) {
+  .event__link {
+    width: 100%;
+  }
+}
 .event__link:hover {
   background: #E0B68B;
 }
@@ -2564,6 +2569,9 @@ a .events__titleDesc:hover {
   background: #C7A17A;
   border-radius: 8px;
   color: #fff;
+  padding: 14px 0;
+  display: block;
+  text-align: center;
   transition: all 0.3s linear;
 }
 .event__organization-link:hover {
@@ -2985,6 +2993,11 @@ a .events__titleDesc:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+@media (max-width: 600px) {
+  .solution__inner {
+    align-items: flex-start;
+  }
 }
 .solution__info {
   display: flex;
