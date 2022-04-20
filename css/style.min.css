@@ -1264,7 +1264,7 @@ template {
   font-style: normal;
 }
 @font-face {
-  font-family: "NewBaskervilleC Regular";
+  font-family: "NewBaskervilleC";
   font-display: swap;
   src: url("../fonts/NewBaskervilleC Regular.woff2") format("woff2");
   src: url("../fonts/NewBaskervilleC Regular.woff") format("woff");
@@ -1304,6 +1304,12 @@ template {
   .title {
     font-size: 56px;
     line-height: 67px;
+  }
+}
+@media (min-width: 1024px) {
+  .title {
+    font-size: 64px;
+    line-height: 72px;
   }
 }
 
@@ -1916,9 +1922,6 @@ img.mfp-img {
     margin-bottom: 0;
   }
 }
-a .events__img:hover {
-  box-shadow: 0 0 10px 2px #C7A17A;
-}
 a .events__titleDesc:hover {
   color: #C7A17A;
 }
@@ -1931,6 +1934,7 @@ a .events__titleDesc:hover {
   letter-spacing: 0.1px;
   color: #010103;
   margin: 16px 0px;
+  transition: all 0.2s linear;
 }
 @media (min-width: 1000px) {
   .events__titleDesc {
@@ -2056,6 +2060,23 @@ a .events__titleDesc:hover {
   .page-events {
     padding-top: 233px;
   }
+}
+
+.events__item a {
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.events__item a > .events__img {
+  transition: all 0.2s linear;
+}
+
+.events__item a:hover > .events__img {
+  transform: scale(1.1);
+}
+
+.events__item a:hover ~ .events__description > a > .events__titleDesc {
+  color: #C7A17A;
 }
 
 .bonus {
@@ -2273,10 +2294,11 @@ a .events__titleDesc:hover {
 }
 .event__top-title {
   font-size: 32px;
-  line-height: 1.2;
+  line-height: 72px;
   color: #010103;
   margin-bottom: 15px;
   margin-right: 15px;
+  font-weight: 400;
 }
 @media (min-width: 768px) {
   .event__top-title {
@@ -2296,7 +2318,7 @@ a .events__titleDesc:hover {
 }
 .event__top-text {
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 30px;
   color: #503D3B;
   margin-bottom: 15px;
   min-width: 335px;
@@ -2362,6 +2384,11 @@ a .events__titleDesc:hover {
   .event__descr-title {
     font-size: 40px;
     font-weight: 400;
+  }
+}
+@media (min-width: 1440px) {
+  .event__descr-title {
+    line-height: 48px;
   }
 }
 .event__descr-text {
@@ -2480,7 +2507,9 @@ a .events__titleDesc:hover {
 }
 @media (min-width: 1024px) {
   .event__organization-title {
-    font-size: 48px;
+    font-size: 40px;
+    line-height: 48px;
+    font-weight: 400;
   }
 }
 @media (min-width: 1024px) {
@@ -2504,8 +2533,9 @@ a .events__titleDesc:hover {
   margin-bottom: 15px;
   display: flex;
   font-family: "Jost";
-  font-size: 24px;
+  font-size: 16px;
   color: #503D3B;
+  line-height: 26px;
 }
 .event__organization-text span {
   display: flex;
@@ -3104,6 +3134,15 @@ a .events__titleDesc:hover {
   margin-bottom: 34px;
   font-size: 45px;
 }
+@media (max-width: 600px) {
+  .form__title {
+    font-family: "Jost";
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+}
 .form__buttons {
   display: flex;
   justify-content: space-between;
@@ -3118,6 +3157,11 @@ a .events__titleDesc:hover {
   border-radius: 8px;
   color: #503D3B;
 }
+@media (max-width: 600px) {
+  .form__place {
+    padding: 12px 28px;
+  }
+}
 .form__place.active {
   background: #C7A17A;
   color: #FFFFFF;
@@ -3127,6 +3171,11 @@ a .events__titleDesc:hover {
   display: flex;
   align-items: center;
   width: 240px;
+}
+@media (max-width: 600px) {
+  .form__date {
+    width: 100%;
+  }
 }
 .form__date select {
   appearance: none;
@@ -3171,6 +3220,11 @@ a .events__titleDesc:hover {
   display: flex;
   margin-bottom: 24px;
 }
+@media (max-width: 600px) {
+  .form__dateInfo {
+    flex-direction: column;
+  }
+}
 .form__info {
   position: relative;
   display: flex;
@@ -3182,6 +3236,7 @@ a .events__titleDesc:hover {
   line-height: 44px;
   width: 75px;
   margin-right: 16px;
+  color: #010103;
 }
 .form__info input {
   width: 384px;
@@ -3195,21 +3250,43 @@ a .events__titleDesc:hover {
 }
 .form__events label {
   display: block;
+  color: #010103;
 }
 .form__events input {
   border: 1px solid #E2DFDD;
   border-radius: 8px;
   width: 480px;
-  height: 68px;
+  padding: 10px 12px;
+  font-family: "Jost";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #010103;
+}
+@media (max-width: 600px) {
+  .form__events input {
+    max-width: 100%;
+    height: 68px;
+  }
 }
 .form__description {
-  display: block;
+  display: flex;
   color: #A7A7A7;
   line-height: 20px;
   margin-top: 6px;
 }
-.form__description span {
+@media (max-width: 600px) {
+  .form__description {
+    display: block;
+  }
+}
+.form__description a {
   color: #C7A17A;
+}
+@media (max-width: 600px) {
+  .form__description a {
+    display: inline;
+  }
 }
 .form__buttonSabmit {
   border: none;
@@ -3275,23 +3352,7 @@ a .events__titleDesc:hover {
 .event-slider .slick-list {
   max-width: 335px;
   width: 100%;
-  margin: 0 auto 15px;
-}
-.event-slider .slick-dots {
-  display: flex;
-  justify-content: center;
-  font-size: 0;
-  padding: 0;
-  margin-bottom: 15px;
-}
-.event-slider .slick-dots li {
-  width: 4px;
-  height: 4px;
-  background-color: #E0DCD7;
-  border-radius: 50%;
-}
-.event-slider .slick-dots li:not(:last-child) {
-  margin-right: 20px;
+  margin: 0 auto;
 }
 
 .header {
@@ -3940,6 +4001,646 @@ a .events__titleDesc:hover {
   .events-control__coins {
     display: block;
   }
+}
+
+.modal__overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.modal__wrapper {
+  position: relative;
+  max-width: 560px;
+  width: 100%;
+  padding: 40px;
+  background: #fff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+}
+@media (max-width: 600px) {
+  .modal__wrapper {
+    max-width: 375px;
+    padding: 20px;
+    border-radius: 0;
+  }
+}
+.modal__thanks-title {
+  margin-bottom: 24px;
+}
+@media (max-width: 600px) {
+  .modal__thanks-title {
+    font-family: "Jost";
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px;
+    margin-bottom: 20px;
+  }
+}
+.modal__thanks-subtitle {
+  display: block;
+  font-family: "Jost";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #010103;
+  margin-bottom: 24px;
+}
+@media (max-width: 600px) {
+  .modal__thanks-subtitle {
+    margin-bottom: 20px;
+  }
+}
+.modal__thanks-data {
+  display: flex;
+  margin-bottom: 24px;
+}
+@media (max-width: 600px) {
+  .modal__thanks-data {
+    margin-bottom: 20px;
+  }
+}
+.modal__thanks-titleDesc {
+  margin-right: 10px;
+  font-family: "Jost";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #010103;
+  width: 80px;
+}
+.modal__thanks-paid {
+  margin-bottom: 24px;
+}
+@media (max-width: 600px) {
+  .modal__thanks-paid {
+    margin-bottom: 20px;
+  }
+}
+.modal__thanks-date {
+  font-family: "Jost";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #C7A17A;
+}
+.modal__thanks-notify {
+  display: block;
+  font-family: "Jost";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #010103;
+  margin-bottom: 10px;
+}
+.modal__thanks-text {
+  font-family: "Jost";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #010103;
+}
+.modal__deposit-title {
+  font-family: "NewBaskervilleC";
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
+  color: #010103;
+  margin-bottom: 24px;
+}
+@media (max-width: 600px) {
+  .modal__deposit-title {
+    font-family: "Jost";
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+}
+.modal__card {
+  display: flex;
+  gap: 16px;
+  background: #FAF5F0;
+  border-radius: 16px;
+  padding: 16px;
+}
+@media (max-width: 600px) {
+  .modal__card {
+    flex-direction: column;
+  }
+}
+.modal__card-data {
+  display: flex;
+  flex-direction: column;
+  min-width: 216px;
+}
+.modal__card-inputs {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.modal__card-input {
+  font-family: "Jost";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #010103;
+  padding: 8px 10px;
+  border: 1px solid #E2DFDD;
+}
+.modal__card-input::placeholder {
+  color: #A7A7A7;
+}
+.modal__card-input--number {
+  width: 100%;
+  border-radius: 8px 8px 0 0;
+}
+.modal__card-input--date {
+  width: 50%;
+  border-radius: 0 0 0 8px;
+}
+.modal__card-input--cvc {
+  width: 50%;
+  border-radius: 0 0 8px 0;
+}
+.modal__card-label {
+  font-family: "Jost";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #010103;
+  display: flex;
+  align-items: center;
+}
+.modal__card-button {
+  width: 100%;
+  padding: 12px 0;
+  margin-left: 16px;
+  background: #fff url("../img/form/form-pay.svg") no-repeat center;
+  border: 1px solid #010103;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.modal__card-images {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+@media (max-width: 600px) {
+  .modal__card-images {
+    justify-content: center;
+    gap: 10px;
+  }
+}
+.modal__card-text {
+  font-family: "Jost";
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #A7A7A7;
+}
+@media (max-width: 600px) {
+  .modal__card-text {
+    text-align: center;
+  }
+}
+.modal .form__info input {
+  padding-left: 12px;
+}
+.modal .form__events label {
+  margin-bottom: 10px;
+}
+.modal .form__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #FAF5F0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+@media (max-width: 600px) {
+  .modal .form__close {
+    top: 20px;
+    right: 20px;
+  }
+}
+.modal__book .form__payment {
+  display: flex;
+  margin: 24px 0;
+  height: 48px;
+}
+@media (max-width: 600px) {
+  .modal__book .form__payment {
+    flex-direction: column;
+    height: 106px;
+    margin-bottom: 0;
+  }
+}
+.modal__book .form__payment-title {
+  font-family: "Jost";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #010103;
+  width: min-content;
+  margin-right: 16px;
+}
+@media (max-width: 600px) {
+  .modal__book .form__payment-title {
+    width: max-content;
+    margin-bottom: 12px;
+  }
+}
+.modal__book .form__payment-tabs {
+  display: flex;
+  background: #FAF5F0;
+  border-radius: 8px;
+  width: 100%;
+}
+.modal__book .form__payment-tab {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.modal__book .form__payment-tab span {
+  position: absolute;
+  left: 0;
+  bottom: -26px;
+  visibility: hidden;
+  opacity: 0;
+  font-family: "Jost";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #A7A7A7;
+  transition: all 0.2s linear;
+}
+.modal__book .form__payment-tab:hover .form__payment-button {
+  background: #E0B68B;
+  color: #fff;
+}
+.modal__book .form__payment-tab:active .form__payment-button {
+  background: #AC8B6A;
+  color: #fff;
+}
+.modal__book .form__payment-tab--disable .form__payment-button {
+  opacity: 0.3;
+}
+.modal__book .form__payment-tab--active .form__payment-button {
+  background: #C7A17A;
+  color: #FFFFFF;
+}
+.modal__book .form__payment-tab--active span {
+  visibility: visible;
+  opacity: 1;
+}
+.modal__book .form__payment-tab--active:hover .form__payment-button {
+  background: #C7A17A;
+  color: #FFFFFF;
+}
+.modal__book .form__payment-button {
+  font-family: "Jost";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #503D3B;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  padding: 14px 0;
+  width: 100%;
+  transition: all 0.2s linear;
+}
+.modal__book .form__notification {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Jost";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #010103;
+  margin-bottom: 24px;
+  background: #FAF5F0;
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+@media (max-width: 600px) {
+  .modal__book .form__notification-desc {
+    display: flex;
+  }
+}
+.modal__book .form__notification-desc span {
+  font-size: 24px;
+  line-height: 24px;
+  color: #C7A17A;
+  margin-left: 10px;
+}
+.modal__book .form__title {
+  font-family: "NewBaskervilleC";
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
+  color: #010103;
+  margin-bottom: 24px;
+}
+@media (max-width: 600px) {
+  .modal__book .form__title {
+    font-family: "Jost";
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 500;
+  }
+}
+.modal__book .form__dateInfo {
+  width: 100%;
+}
+.modal__book .form__date::before {
+  width: 24px;
+  height: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.modal__book .form__date select {
+  border-radius: 0;
+  width: 100%;
+  padding: 10px 0 10px 46px;
+}
+.modal__book .form__date:nth-child(1) select {
+  border-radius: 8px 0 0 8px;
+}
+.modal__book .form__date:nth-child(2)::before {
+  background-image: url("../img/form/form-watch.svg");
+}
+.modal__book .form__date:nth-child(3)::before {
+  background-image: url("../img/form/form-profile.svg");
+}
+.modal__book .form__date:nth-child(3) select {
+  border-radius: 0 8px 8px 0;
+}
+.modal__application {
+  display: flex;
+}
+.modal__application .modal__thanks {
+  display: block;
+}
+.modal__info {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+  padding: 10px 12px;
+  background: #FAF5F0;
+  border-radius: 8px;
+}
+@media (max-width: 600px) {
+  .modal__info {
+    margin-bottom: 20px;
+  }
+}
+.modal__info-title {
+  font-family: "Jost";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #503D3B;
+}
+.modal__info-date, .modal__info-adres {
+  ont-family: "Jost";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #BA948F;
+}
+.modal__info-balance {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+.modal__info-balance span {
+  font-family: "Jost";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #503D3B;
+  margin-left: 10px;
+}
+.modal__tickets .form__title {
+  font-size: 40px;
+  line-height: 48px;
+  margin-bottom: 24px;
+}
+@media (max-width: 600px) {
+  .modal__tickets .form__title {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 20px;
+  }
+}
+.modal__tickets .modal__order {
+  display: flex;
+  flex-direction: column;
+}
+.modal__tickets .modal__order-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+.modal__tickets .modal__order-row:not(:last-child) {
+  padding-bottom: 8px;
+  border-bottom: 1px solid #E5E1E1;
+  margin-bottom: 8px;
+}
+.modal__tickets .modal__order-left {
+  display: flex;
+  flex-direction: column;
+  font-family: "Jost";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #010103;
+}
+.modal__tickets .modal__order-right {
+  background: #FAF5F0;
+  border-radius: 24px;
+  padding: 8px 12px;
+  display: flex;
+  max-width: 98px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.modal__tickets .modal__order-right--price {
+  background: transparent;
+}
+.modal__tickets .modal__order-title:last-child {
+  font-size: 18px;
+  line-height: 18px;
+}
+.modal__tickets .modal__order-subtitle {
+  font-weight: 400;
+}
+.modal__tickets .modal__order-amount {
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 500;
+}
+.modal__tickets .modal__order-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+  background: transparent;
+}
+.modal__tickets .form__buttonSabmit {
+  margin-top: 16px;
+}
+.modal__tickets-thanks .form__title {
+  font-family: "NewBaskervilleC";
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
+  color: #010103;
+  margin-bottom: 24px;
+}
+@media (max-width: 600px) {
+  .modal__tickets-thanks .form__title {
+    font-family: "Jost";
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+}
+.modal__tickets-thanks .modal__tickets-text {
+  font-family: "Jost";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #010103;
+  margin-bottom: 24px;
+}
+@media (max-width: 600px) {
+  .modal__tickets-thanks .modal__tickets-text {
+    margin-bottom: 20px;
+  }
+}
+.modal__tickets-thanks .modal__tickets-text span {
+  color: #C7A17A;
+}
+.modal__tickets-thanks .modal__thanks-paid {
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 600px) {
+  .modal__tickets-thanks .modal__thanks-paid {
+    margin-bottom: 20px;
+  }
+}
+.modal__tickets-thanks .modal__thanks-titleDesc {
+  font-family: "Jost";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #010103;
+  width: 80px;
+  margin-right: 10px;
+}
+.modal__tickets-thanks .modal__thanks-paidSum {
+  font-family: "Jost";
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 24px;
+  color: #010103;
+}
+.modal__tickets-thanks .modal__info {
+  margin-bottom: 0;
+}
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+@media (max-width: 600px) {
+  .modal__form {
+    margin-bottom: 20px;
+  }
+}
+.modal__form-input {
+  display: flex;
+}
+@media (max-width: 600px) {
+  .modal__form-input {
+    position: relative;
+  }
+}
+.modal__form-input:first-child input {
+  border-radius: 16px 16px 0 0;
+}
+@media (max-width: 600px) {
+  .modal__form-input:first-child input {
+    border-radius: 8px 8px 0 0;
+  }
+}
+.modal__form-input:last-child input {
+  border-radius: 0 0 16px 16px;
+}
+@media (max-width: 600px) {
+  .modal__form-input:last-child input {
+    border-radius: 0 0 8px 8px;
+  }
+}
+.modal__form-input label {
+  min-width: 81px;
+  margin-right: 16px;
+  font-family: "Jost";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 44px;
+  color: #010103;
+}
+@media (max-width: 600px) {
+  .modal__form-input label {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    line-height: 24px;
+  }
+}
+.modal__form-input input {
+  width: 100%;
+  border: 1px solid #E2DFDD;
+  padding: 10px 12px;
+}
+.modal__form-input input:focus ~ .modal__form label {
+  display: none;
+}
+@media (max-width: 600px) {
+  .modal__form-input input {
+    height: 44px;
+    padding: 10px 12px 10px 90px;
+  }
+}
+.modal__thanks-paid {
+  display: flex;
+  align-items: center;
+}
+.modal__thanks-paidSum {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 24px;
 }
 
 .footer {
