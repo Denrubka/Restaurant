@@ -2032,6 +2032,11 @@ a .events__titleDesc:hover {
   border-radius: 8px;
   transition: all 0.3s linear;
 }
+@media (max-width: 600px) {
+  .events__button-link {
+    display: none;
+  }
+}
 .events__button-link:hover {
   color: #fff;
   background-color: #C7A17A;
@@ -2294,7 +2299,7 @@ a .events__titleDesc:hover {
 }
 .event__top-title {
   font-size: 32px;
-  line-height: 72px;
+  line-height: 40px;
   color: #010103;
   margin-bottom: 15px;
   margin-right: 15px;
@@ -2314,6 +2319,7 @@ a .events__titleDesc:hover {
   .event__top-title {
     font-size: 64px;
     max-width: 590px;
+    line-height: 72px;
   }
 }
 .event__top-text {
@@ -2355,6 +2361,11 @@ a .events__titleDesc:hover {
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+}
+@media (max-width: 600px) {
+  .event__info {
+    padding-top: 16px;
   }
 }
 .event__descr {
@@ -2549,6 +2560,11 @@ a .events__titleDesc:hover {
   background: #B3B3B3;
   border-radius: 50%;
   margin: 7px 12px 0 12px;
+}
+@media (max-width: 600px) {
+  .event__organization-text span {
+    margin: 7px 9px 0 9px;
+  }
 }
 .event__organization-phone {
   font-size: 24px;
@@ -4018,11 +4034,10 @@ a .events__titleDesc:hover {
 
 .modal__overlay {
   position: absolute;
-  top: 0;
+  top: 30%;
   right: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
