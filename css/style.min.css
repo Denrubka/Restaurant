@@ -3291,11 +3291,11 @@ a .events__titleDesc:hover {
   font-size: 16px;
   line-height: 24px;
   color: #010103;
+  height: 68px;
 }
 @media (max-width: 600px) {
   .form__events input {
     max-width: 100%;
-    height: 68px;
   }
 }
 .form__description {
