@@ -4032,6 +4032,9 @@ a .events__titleDesc:hover {
   }
 }
 
+.modal {
+  display: none !important;
+}
 .modal__overlay {
   position: absolute;
   top: 30%;
