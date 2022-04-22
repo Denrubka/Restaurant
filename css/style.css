@@ -4384,6 +4384,11 @@ a .events__titleDesc:hover {
   width: 100%;
   transition: all 0.2s linear;
 }
+@media (max-width: 600px) {
+  .modal__book .form__payment-button {
+    margin-bottom: 0;
+  }
+}
 .modal__book .form__notification {
   display: flex;
   justify-content: space-between;
