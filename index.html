@@ -603,7 +603,7 @@
 </footer>
 </div>
 <!-- Модалка бронирования стола -->
-<section class="form modal modal__overlay modal__book">
+<section class="form modal modal__overlay modal__book mfp-hide white-popup" id="modal__book">
 <div class="modal__wrapper">
 <form action="post" class="modal__content">
 <h2 class="form__title">Бронирование стола</h2>
@@ -665,12 +665,12 @@
 <input class="form__buttonSabmit" type="submit" value="Забронировать">
 <span class="form__description">Вы соглашаетесь на обработку &nbsp; <a href="#"> персональных данных</a></span>
 </form>
-<div class="form__close">
+<div class="form__close mfp-close">
 <img src="./img/form/form-close.png" alt="form-close">
 </div>
 </div>
 </section>
-<section class="form modal modal__overlay modal__application">
+<section class="form modal modal__overlay modal__application mfp-hide" id="modal__application">
 <div class="modal__wrapper">
 <form action="post modal__content">
 <h2 class="form__title">Заявка на банкет</h2>
@@ -714,12 +714,12 @@
 <input class="form__buttonSabmit" type="submit" value="Отправить">
 <span class="form__description">Вы соглашаетесь на обработку <a href="#"> персональных данных</a></span>
 </form>
-<div class="form__close">
+<div class="form__close mfp-close">
 <img src="./img/form/form-close.png" alt="form-close">
 </div>
 </div>
 </section>
-<section class="modal modal__overlay modal__deposit">
+<section class="modal modal__overlay modal__deposit mfp-hide" id="modal__deposit">
 <div class="modal__wrapper">
 <h2 class="modal__deposit-title">Оплата депозита</h2>
 <div class="modal__thanks-data">
@@ -754,12 +754,12 @@
 </div>
 </div>
 <input class="form__buttonSabmit" type="submit" value="Оплатить картой">
-<div class="form__close">
+<div class="form__close mfp-close">
 <img src="./img/form/form-close.png" alt="form-close">
 </div>
 </div>
 </section>
-<section class="modal modal__overlay modal__thanks modal__thanks--then">
+<section class="modal modal__overlay modal__thanks modal__thanks--then mfp-hide" id="modal__thanks--then">
 <div class="modal__wrapper">
 <h2 class="modal__thanks-title">Спасибо!</h2>
 <span class="modal__thanks-subtitle">Бронь оформлена. В течение часа позвоним, чтобы подтвердить бронь.</span>
@@ -775,12 +775,12 @@
 </div>
 <span class="modal__thanks-notify">Вы можете оформить предзаказ блюд к брони.</span>
 <p class="modal__thanks-text">Для этого зайдите в каталог, выберите нужные блюда, укажите время брони и оформите предзаказ.</p>
-<div class="form__close">
+<div class="form__close mfp-close">
 <img src="./img/form/form-close.png" alt="form-close">
 </div>
 </div>
 </section>
-<section class="modal modal__overlay modal__thanks modal__thanks--now">
+<section class="modal modal__overlay modal__thanks modal__thanks--now mfp-hide" id="modal__thanks--now">
 <div class="modal__wrapper">
 <h2 class="modal__thanks-title">Спасибо!</h2>
 <span class="modal__thanks-subtitle">Бронь оформлена. В течение часа позвоним, чтобы подтвердить бронь.</span>
@@ -792,12 +792,12 @@
 </div>
 <span class="modal__thanks-notify">Вы можете оформить предзаказ блюд к брони.</span>
 <p class="modal__thanks-text">Для этого зайдите в каталог, выберите нужные блюда, укажите время брони и оформите предзаказ.</p>
-<div class="form__close">
+<div class="form__close mfp-close">
 <img src="./img/form/form-close.png" alt="form-close">
 </div>
 </div>
 </section>
-<section class="form modal modal__overlay modal__tickets">
+<section class="form modal modal__overlay modal__tickets mfp-hide" id="modal__tickets">
 <div class="modal__wrapper">
 <form action="post modal__content">
 <h2 class="form__title">Покупка билетов</h2>
@@ -859,12 +859,12 @@
 <input class="form__buttonSabmit" type="submit" value="Перейти к оплате">
 <span class="form__description">Вы соглашаетесь на обработку &nbsp; <a href="#"> персональных данных</a></span>
 </form>
-<div class="form__close">
+<div class="form__close mfp-close">
 <img src="./img/form/form-close.png" alt="form-close">
 </div>
 </div>
 </section>
-<section class="form modal modal__overlay modal__tickets-thanks">
+<section class="form modal modal__overlay modal__tickets-thanks mfp-hide" id="modal__tickets-thanks">
 <div class="modal__wrapper">
 <h2 class="form__title">Готово!</h2>
 <p class="modal__tickets-text">Вы успешно приобрели <span>6 билетов</span>. Выслали их на указанную электронную почту.
@@ -882,7 +882,7 @@
 <span>Куплено 6 билетов</span>
 </div>
 </div>
-<div class="form__close">
+<div class="form__close mfp-close">
 <img src="./img/form/form-close.png" alt="form-close">
 </div>
 </div>

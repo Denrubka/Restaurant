@@ -3219,6 +3219,7 @@ a .events__titleDesc:hover {
 }
 .form__date:nth-child(2) select {
   border-radius: 0 8px 8px 0;
+  border-left: none;
 }
 .form__date::after {
   position: absolute;
@@ -3236,12 +3237,13 @@ a .events__titleDesc:hover {
   position: absolute;
   content: "";
   width: 18px;
-  height: 18px;
+  height: 20px;
   background-image: url("../img/form/form-calendar.svg");
   background-repeat: no-repeat;
   background-size: cover;
-  top: 10px;
+  top: 50%;
   left: 15px;
+  transform: translateY(-50%);
 }
 .form__date:nth-child(2)::before {
   background-image: url("../img/form/form-profile.svg");
@@ -3273,6 +3275,7 @@ a .events__titleDesc:hover {
   height: 44px;
   outline: none;
   border: 1px solid #E2DFDD;
+  padding: 10px 12px;
 }
 .form__events {
   display: flex;
@@ -3385,6 +3388,25 @@ a .events__titleDesc:hover {
   max-width: 335px;
   width: 100%;
   margin: 0 auto;
+}
+
+.button-wrapper {
+  height: 900px;
+  margin-top: 230px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+.button-wrapper a {
+  display: flex;
+  width: max-content;
+  background: #000;
+  padding: 12px 25px;
+  color: white;
+  border-radius: 16px;
+  max-height: 44px;
 }
 
 .header {
@@ -4036,7 +4058,7 @@ a .events__titleDesc:hover {
 }
 
 .modal {
-  display: none !important;
+  display: none;
 }
 .modal__overlay {
   position: absolute;
@@ -4063,6 +4085,7 @@ a .events__titleDesc:hover {
     max-width: 375px;
     padding: 20px;
     border-radius: 0;
+    margin-top: 500px;
   }
 }
 .modal__thanks-title {
@@ -4264,6 +4287,9 @@ a .events__titleDesc:hover {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+.modal .form__close.mfp-close {
+  padding: 0;
 }
 @media (max-width: 600px) {
   .modal .form__close {
